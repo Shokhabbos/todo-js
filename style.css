@@ -1,5 +1,5 @@
 body{
-    background-color: #352f5b;
+    background-color: #2f5b52;
 }
 
 .container{
@@ -9,12 +9,15 @@ body{
 input[type="text"], input[type="text"]:focus{
     color: white;
     border: none;
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(251, 244, 244, 0.2);
     max-width: 500px;
+}
+input::placeholder{
+    color: white;
 }
 
 .todos li{
-    background-color:#423a6f ;
+    background-color:#47957d ;
 }
 
 .delete{
