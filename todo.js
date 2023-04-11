@@ -1,6 +1,8 @@
 // refs
 const addForm = document.querySelector('.add');
-const list = document.querySelector('.todos')
+const list = document.querySelector('.todos');
+const search = document.querySelector('.search input');
+
 // reusable func
 const addToHtml = x => {
     const html = `
@@ -31,3 +33,27 @@ list.addEventListener('click', e => {
     e.target.parentElement.remove()
   }
 })
+
+const filteredTodo = y => {
+    Array.from(list.children)
+    // QIDIRVOTGAN SOZ VA LIST ITEMNING ICHIDAGI KONTENT BIR BIRIGA MOS kelmasa
+    .filter(li => !li.textContent.toLowerCase().includes(y))
+    // display none
+    .forEach(li => li.classList.add('filtered'))
+
+    Array.from(list.children)
+    // QIDIRVOTGAN SOZ VA LIST ITEMNING ICHIDAGI KONTENT BIR BIRIGA MOS kelSA
+    .filter(li => li.textContent.toLowerCase().includes(y))
+    .forEach(li => li.classList.remove('filtered'))
+
+    
+}
+// search & filter
+search.addEventListener('keyup', e => {
+    const searching = search.value.toLowerCase().trim();
+   filteredTodo(searching)
+
+
+
+})
+

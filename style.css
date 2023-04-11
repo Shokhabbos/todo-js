@@ -27,3 +27,7 @@ ul li{
 i{
     color: #e5efff;
 }
+
+.filtered{
+    display: none !important;
+}
