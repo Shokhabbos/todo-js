@@ -21,7 +21,3 @@ addForm.addEventListener('submit', e => {
         addForm.reset()
     }
 })
-
-list.addEventListener('click', e => {
-    console.log(e);
-})
