@@ -1,6 +1,7 @@
+// refs
 const addForm = document.querySelector('.add');
 const list = document.querySelector('.todos')
-
+// reusable func
 const addToHtml = x => {
     const html = `
     <li
@@ -13,6 +14,7 @@ const addToHtml = x => {
   list.innerHTML += html
 }
 
+// add
 addForm.addEventListener('submit', e => {
     e.preventDefault()
     const todo = addForm.add.value.trim();
@@ -20,4 +22,12 @@ addForm.addEventListener('submit', e => {
         addToHtml(todo)
         addForm.reset()
     }
+})
+
+// delete
+
+list.addEventListener('click', e => {
+  if(e.target.classList.contains('delete')){
+    e.target.parentElement.remove()
+  }
 })
